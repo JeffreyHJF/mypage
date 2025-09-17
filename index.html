@@ -21,104 +21,73 @@
     color:var(--text); background: radial-gradient(1200px 800px at 80% -10%, #1a2442 0%, #0b0f19 60%, #0b0f19 100%), var(--bg);
     line-height:1.45;
   }
-  .container{
-    max-width:1100px; margin:0 auto; padding:20px 16px 28px;
-  }
+  .container{ max-width:1100px; margin:0 auto; padding:20px 16px 28px }
   .hero{
-    display:grid; grid-template-columns: 90px 1fr; gap:18px; align-items:center; margin-bottom:16px;
+    display:grid; grid-template-columns: 150px 1fr; gap:18px; align-items:center; margin-bottom:16px;
   }
   @media (max-width: 680px){
     .hero{ grid-template-columns: 1fr; align-items:start }
   }
-  /* 头像：支持放你的照片 */
   .avatar{
-    width:90px; height:90px; border-radius:16px; overflow:hidden; flex:0 0 auto;
+    width:140px; height:140px; border-radius:18px; overflow:hidden; flex:0 0 auto;
     background:linear-gradient(135deg, var(--accent-2), var(--accent));
     box-shadow:0 10px 24px rgba(90, 216, 166, 0.25);
     border:1px solid rgba(255,255,255,.1);
   }
-  .avatar img{
-    width:100%; height:100%; object-fit:cover; display:block;
-  }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:block }
+  @media (max-width:680px){ .avatar{ width:120px; height:120px } }
 
-  .title{
-    flex:1 1 320px;
-  }
-  /* 姓名独立为大标题，更醒目 */
+  .title{ flex:1 1 320px }
   .name{
     margin:0 0 4px 0;
-    font-size: clamp(28px, 6.2vw, 54px);
-    font-weight: 800;
-    letter-spacing:.3px;
-    line-height:1.08;
+    font-size: clamp(22px, 4.6vw, 42px);
+    font-weight: 800; letter-spacing:.2px; line-height:1.1;
   }
   h1{
-    margin:6px 0 0 0; font-size: clamp(20px, 3.2vw, 28px); letter-spacing:.2px;
+    margin:6px 0 0 0; font-size: clamp(18px, 2.8vw, 26px); letter-spacing:.2px;
     display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem;
   }
-  .subtitle{
-    color:var(--muted); font-size: clamp(13px, 2.4vw, 16px); margin-top:6px;
-  }
-  .contact{
-    display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;
-  }
+  .subtitle{ color:var(--muted); font-size: clamp(13px, 2.4vw, 16px); margin-top:6px }
+  .contact{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
   .chip{
-    background:var(--chip); color:var(--text); border:1px solid rgba(255,255,255,.06); padding:6px 10px; border-radius:999px; font-size:12px;
+    background:var(--chip); color:var(--text); border:1px solid rgba(255,255,255,.06);
+    padding:6px 10px; border-radius:999px; font-size:12px;
   }
 
-  .grid{
-    display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px;
-  }
-  @media (max-width: 820px){
-    .grid{grid-template-columns: 1fr}
-  }
+  .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px }
+  @media (max-width: 820px){ .grid{ grid-template-columns:1fr } }
   section.card{
     background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
     border:1px solid rgba(255,255,255,.08);
     border-radius:16px; padding:16px 16px 14px;
     box-shadow: 0 10px 26px rgba(0,0,0,.3);
   }
-  section.card h2{
-    margin:0 0 10px 0; font-size: clamp(16px, 2.6vw, 20px); letter-spacing:.2px;
-  }
-  ul{margin:8px 0 0 18px; padding:0}
-  li{margin:6px 0; color:var(--text)}
-  .muted{color:var(--muted)}
-  .highlight{color:var(--accent)}
-  .accent2{color:var(--accent-2)}
-  .kpis{
-    display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;
-  }
+  section.card h2{ margin:0 0 10px 0; font-size: clamp(16px, 2.6vw, 20px); letter-spacing:.2px }
+  ul{ margin:8px 0 0 18px; padding:0 }
+  li{ margin:6px 0; color:var(--text) }
+  p{ margin:8px 0 0 }
+  .muted{ color:var(--muted) }
+  .highlight{ color:var(--accent) }
+  .accent2{ color:var(--accent-2) }
+
+  .kpis{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px }
   .kpi{
     background:linear-gradient(180deg, rgba(90, 216, 166, .10), rgba(90, 216, 166, .02));
     border:1px solid rgba(90, 216, 166, .35);
     color:var(--text); padding:10px 12px; border-radius:12px; flex:1 1 160px; min-width:150px;
   }
-  .kpi b{font-size:18px}
-  .footer{
-    margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;
-  }
+  .kpi b{ font-size:18px }
+  .bar{ margin-top:8px; height:6px; background:#1d2846; border-radius:999px; overflow:hidden }
+  .bar > span{ display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); width:0%; transition: width 1.2s ease-out }
+
+  .footer{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap }
   .btn{
     background:linear-gradient(135deg, var(--accent-2), var(--accent));
     color:#081019; text-decoration:none; border:none; padding:10px 14px; border-radius:12px; font-weight:600; font-size:14px;
     box-shadow:0 10px 24px rgba(91,143,249,.25);
   }
-  .btn.outline{
-    background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.18);
-    box-shadow:none;
-  }
+  .btn.outline{ background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.18); box-shadow:none }
 
-  /* Tiny chart-style bars for KPIs */
-  .bar{
-    margin-top:8px; height:6px; background:#1d2846; border-radius:999px; overflow:hidden;
-  }
-  .bar > span{
-    display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent));
-    width:0%;
-    transition: width 1.2s ease-out;
-  }
-
-  /* Print-friendly */
   @media print{
     body{background:white; color:#111}
     section.card{border-color:#ddd; box-shadow:none}
@@ -130,7 +99,7 @@
 <body>
   <div class="container">
     <header class="hero">
-      <!-- 放你的照片：把 src 改为你的图片路径，如 ./me.jpg -->
+      <!-- 替换为你的照片路径，如 ./me.jpg -->
       <div class="avatar" aria-label="个人照片">
         <img src=".\jeffrey.jpg" alt="">
       </div>
@@ -147,14 +116,20 @@
       </div>
     </header>
 
+    <!-- Biography -->
+    <section class="card" id="biography">
+      <h2>Biography</h2>
+      <p>我专注于云—边—端一体化的大模型推理优化与工程落地，聚焦模型压缩、异构并行与隐私安全。在此之前，任 CALAS 算法研究员，并在中科院香港创新研究院担任 LLM 应用工程师（智慧医疗方向），主导垂直场景微调与评测体系建设。我获得香港城市大学电子信息工程硕士（优秀毕业生），本科毕业于福州大学。当前研究覆盖跨层压缩（低秩/量化/KV 压缩）、云边协同并行切分、存储协同（SSD 直通、NUMA 优化）与 HE/TEE 等安全推理实践。</p>
+    </section>
+
     <div class="grid">
       <section class="card">
         <h2>我是谁｜背景与优势</h2>
         <ul>
           <li>方向：<b>LLM垂直化微调</b>、<b>模型压缩与异构计算</b>、<b>云-边协同推理</b>、<b>隐私计算</b></li>
-          <li>经历：CALAS算法研究员；中科院香港创新研究院 LLM应用工程师（智慧医疗）</li>
+          <li>经历：CALAS 算法研究员；中科院香港创新研究院 LLM 应用工程师（智慧医疗）</li>
           <li>教育：香港城市大学 电子信息工程 硕士（优秀毕业生）；福州大学 本科</li>
-          <li>成果：IEIG世界专利赛银奖；第一作者EI 1篇、SCI 3篇；US专利1项；IELTS 7.0</li>
+          <li>成果：IEIG 世界专利赛银奖；第一作者 EI 1 篇、SCI 3 篇；US 专利 1 项；IELTS 7.0</li>
         </ul>
         <div class="kpis">
           <div class="kpi">
@@ -179,56 +154,52 @@
       </section>
 
       <section class="card">
-        <h2>研究兴趣与问题域</h2>
-        <ul>
-          <li><b>跨层压缩</b>：低秩分解 + 4/8-bit 量化 + KV-Cache 压缩，<span class="muted">长上下文友好</span></li>
-          <li><b>协同并行与切分</b>：张量/流水/序列并行的自适配切分，<span class="muted">基于显存/带宽/IO画像</span></li>
-          <li><b>存储协同推理</b>：权重/KV 热-冷分层，<span class="muted">SSD直通加载（PagedAttention风格）、NUMA优化</span></li>
-          <li><b>安全与可信</b>：同态加密（HE）算子子集 + TEE，<span class="muted">端云密钥分离与可审计日志</span></li>
-        </ul>
-      </section>
-
-      <section class="card">
         <h2>代表工作与可迁移价值</h2>
         <ul>
-          <li><b>垂直领域LLM微调（手术场景）</b>：LoRA/PEFT + Partial Freezing；百万级Token语料与评测基准；<span class="highlight">QA +30%，幻觉 -80%</span></li>
-          <li><b>工业边缘AI加速与安全</b>：张量分解×量化×KV压缩；同态加密推理预研；<span class="highlight">算力成本大幅下降</span></li>
-          <li><b>硬件与系统</b>：鲲鹏/A100对齐测评与报告，<span class="muted">标准化验收与工具链</span></li>
+          <li><b>垂直领域LLM微调（手术场景）</b>：LoRA/PEFT + Partial Freezing；百万级 Token 语料与评测基准；<span class="highlight">QA +30%，幻觉 -80%</span></li>
+          <li><b>工业边缘AI加速与安全</b>：张量分解×量化×KV 压缩；同态加密推理预研；<span class="highlight">算力成本大幅下降</span></li>
+          <li><b>硬件与系统</b>：鲲鹏/A100 对齐测评与报告，<span class="muted">标准化验收与工具链</span></li>
         </ul>
-      </section>
-
-      <section class="card">
-        <h2>近期研究计划（3--6个月里程碑）</h2>
-        <ul>
-          <li><b>M1 基线与评测</b>：建立QPS、P99时延、能耗/精度曲线；复现主流LLM基线</li>
-          <li><b>M2 协同压缩+切分</b>：<span class="highlight">≥3×</span> 吞吐提升，显存占用 ≤30%，给出Pareto曲线与脚本</li>
-          <li><b>M3 存储与长上下文</b>：SSD直通权重 + KV压缩，长上下文延迟 <span class="highlight">-30%+</span></li>
-          <li><b>M4 安全PoC</b>：HE/TEE混合推理闭环与审计SOP，<span class="muted">适配政企/金融/工业运维</span></li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>应用方向与场景</h2>
-        <ul>
-          <li><b>工业运维 AIOps</b>：RAG + 时序数据融合推理，实时告警与根因分析</li>
-          <li><b>金融/政企问答</b>：可解释与可审计推理日志，满足隐私与监管</li>
-          <li><b>医疗/机器人</b>：边缘侧低时延决策 + 云侧复核</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>我能立即开展的工作</h2>
-        <ul>
-          <li>搭建云-边协同推理评测流水线，生成<span class="accent2">吞吐/时延/能耗</span>三维基线</li>
-          <li>实现 RAG-TS 原型：<span class="muted">时序数据库 + 检索增强</span>，验证实时问答与告警联动</li>
-          <li>输出标准化部署脚本、技术报告与降本增效分析，支持快速复制</li>
-        </ul>
-        <div class="footer">
-          <a class="btn" href="mailto:Jeffrey_Hong@163.com">联系我</a>
-          <button class="btn outline" onclick="window.print()">打印/导出PDF</button>
-        </div>
       </section>
     </div>
+
+    <!-- 未来研究方向 -->
+    <section class="card" id="future">
+      <h2>未来研究方向：AI on Edge vs Cloud</h2>
+      <ul>
+        <li><b>架构协同</b>：建立云-边统一的推理调度框架，按请求特征（上下文长短、时延等级、合规级别）进行分流与动态迁移；边端处理低时延/隐私优先，云端处理长上下文/高吞吐。</li>
+        <li><b>模型形态</b>：边缘侧采用蒸馏/量化/低秩的轻量模型与 KV 压缩，云端保持全精度或混精度大模型；通过知识蒸馏与参数对齐保持一致性。</li>
+        <li><b>并行与切分</b>：针对硬件画像自适配张量/流水/序列并行；云-边之间支持层/块级切分与 KV 共享，结合批处理与预约执行降低尾时延。</li>
+        <li><b>存储协同</b>：权重与 KV 的热-冷分层与 SSD 直通加载；跨设备缓存与预取策略，NUMA/PCIe 拓扑感知。</li>
+        <li><b>安全与合规</b>：边端进行 PII 脱敏、同态/TEE 子路径推理；云端进行审计与再评估；端云密钥分离与可追溯日志。</li>
+        <li><b>评测基线</b>：构建覆盖 QPS、P50/P99、能耗/成本、精度一致性的多维基准；输出 Pareto 前沿与可复用脚本工具链。</li>
+      </ul>
+    </section>
+
+    <!-- 研究兴趣与问题域（保留） -->
+    <section class="card" id="interests">
+      <h2>研究兴趣与问题域</h2>
+      <ul>
+        <li><b>跨层压缩</b>：低秩分解 + 4/8-bit 量化 + KV-Cache 压缩，<span class="muted">长上下文友好</span></li>
+        <li><b>协同并行与切分</b>：张量/流水/序列并行的自适配切分，<span class="muted">基于显存/带宽/IO画像</span></li>
+        <li><b>存储协同推理</b>：权重/KV 热-冷分层，<span class="muted">SSD直通加载（PagedAttention 风格）、NUMA 优化</span></li>
+        <li><b>安全与可信</b>：同态加密（HE）算子子集 + TEE，<span class="muted">端云密钥分离与可审计日志</span></li>
+      </ul>
+    </section>
+
+    <!-- 我能立即开展的工作与联系 -->
+    <section class="card" id="contact">
+      <h2>我能立即开展的工作</h2>
+      <ul>
+        <li>搭建云-边协同推理评测流水线，生成 <span class="accent2">吞吐/时延/能耗</span> 三维基线与可复现实验脚本</li>
+        <li>实现 RAG-TS 原型：<span class="muted">时序数据库 + 检索增强</span>，联动实时告警与问答</li>
+        <li>输出标准化部署脚本、技术报告与降本增效分析，支持快速复制到多场景</li>
+      </ul>
+      <div class="footer">
+        <a class="btn" href="mailto:Jeffrey_Hong@163.com">联系我</a>
+        <button class="btn outline" onclick="window.print()">打印/导出PDF</button>
+      </div>
+    </section>
   </div>
 
 <script>
@@ -237,9 +208,7 @@
     document.querySelectorAll('.bar > span').forEach((el, i) => {
       const currentWidth = el.style.width || '70%';
       el.style.width = '0%';
-      setTimeout(() => {
-        el.style.width = currentWidth;
-      }, 120 + i*120);
+      setTimeout(() => { el.style.width = currentWidth }, 120 + i*120);
     });
   });
 </script>
